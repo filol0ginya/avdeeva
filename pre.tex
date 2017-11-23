@@ -6,17 +6,25 @@
 \usepackage{indentfirst}            % отступ первой красной строки раздела
 \frenchspacing
 
+
+ % глоссарий
+
+\usepackage{makeidx} % предметный указатель
+
+\usepackage{titlesec}				% настройка заголовков
+	\titleformat*{\section}{\large\bf}
+
 %\usepackage{lastpage} %показывает последнюю страницу
 
-\usepackage{fancyhdr} % Колонтитулы
- 	\pagestyle{fancy}
- 	\renewcommand{\headrulewidth}{0.5pt}  % Толщина линейки, отчеркивающей верхний колонтитул
- 	\lfoot{Анна Макарова}
- 	\rfoot{Русская поваренная книга}
- 	%\rhead{Глава}
- 	%\chead{Верхний в центре}
- 	\lhead{}
- 	% \cfoot{Нижний в центре} % По умолчанию здесь номер страницы
+\usepackage{fancyhdr} %загрузим пакет колонтитулов
+	\pagestyle{fancy} %применим колонтитул
+	\fancyhead{} %очистим хидер на всякий случай
+	\fancyhead[LE,RO]{\thepage} %номер страницы слева сверху на четных и справа на нечетных
+    \fancyhead[LO,RE]{ОТДЕЛ \thesection}
+	%\fancyhead[O]{текст-слева-нечетные} 
+	%\fancyhead[CE]{текст-центр-четные} 
+	\fancyfoot[LE,RO]{Екатерина Авдеева} %футер 
+    \fancyfoot[LO,RE]{Полная поваренная книга} %футер
 
 \usepackage{lastpage} % Узнать, сколько всего страниц в документе.
 
@@ -41,13 +49,24 @@
 
 \usepackage{csquotes} % Инструменты для ссылок
 
+\setcounter{secnumdepth}{3} % нумеруем subsubsections
+
+
+\newcounter{nz}%[subsection] % счётчик рецептов
+
+\newcommand{\z}[1]{%        % оформление счётчика рецептов
+
+\addtocounter{nz}{1}         
+\textbf{\arabic{nz}. #1%
+}}
+
 
 %%% Работа с картинками
-%\usepackage{graphicx}  % Для вставки рисунков
-%\graphicspath{{images/}{images2/}}  % папки с картинками
-%\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
-%\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
-%\usepackage{wrapfig} % Обтекание рисунков текстом
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
 
 %%% Работа с таблицами
 %\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами

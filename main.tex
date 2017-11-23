@@ -1,6 +1,9 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,12pt]{extbook}
 
 \input{pre}
+
+\makeindex % команда для создания предметного указателя
+
 
 \begin{document}
 
@@ -21,7 +24,7 @@
 	
 	\vspace{0.75\baselineskip} % Whitespace above the title
 	
-	{\LARGE русская \\ поваренная \\ книга } % Title
+	{\LARGE  Полная поваренная книга \\ опытной русской хозяйки } % Title
 	
 	\vspace{0.75\baselineskip} % Whitespace below the title
 	
@@ -34,7 +37,7 @@
 	%	Subtitle
 	%------------------------------------------------
 	
-	заключающая в себе более 700 правил приготовления различных блюд, скоромных и постных, простых и праздничных печений; запасов впрок; напитков и проч.%A Number of Fascinating and Life-changing Templates Presented in a Clear and Concise Way % Subtitle or further description
+	или руководство к уменьшению расходов \\ в домашнем хозяйстве %A Number of Fascinating and Life-changing Templates Presented in a Clear and Concise Way % Subtitle or further description
 	
 	\vspace*{3\baselineskip} % Whitespace under the subtitle
 	
@@ -42,11 +45,11 @@
 	%	Editor(s)
 	%------------------------------------------------
 	
-	 Составила на основании многолетней практики
+	 %Составила на основании многолетней практики
 	
 	\vspace{0.5\baselineskip} % Whitespace before the editors
 	
-	{\scshape\Large Анна Макарова \\} % Editor list
+	{\scshape\Large Екатерина Авдеева \\} % Editor list
 	
 	\vspace{0.5\baselineskip} % Whitespace below the editor list
 	
@@ -60,7 +63,7 @@
 	
 	\vspace{0.3\baselineskip} % Whitespace under the publisher logo
 	
-	1880 % Publication year
+	1875 % Publication year
 	
 	%{\small верстка Жаровой~А.~В.} % Вёрстка
 	
@@ -68,13 +71,29 @@
 
 \renewcommand{\thesection}{\Roman {section}}
 
-\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsection}{\Roman {subsection}}
 
-\renewcommand{\thesubsubsection}{\arabic {subsubsection}}
+\renewcommand{\thesubsubsection}{\alph {subsubsection})}
 
 \input{00}
+\include{01}
+\include{02}
+\include{03}
+\include{04}
+\include{05}
+\include{06}
+\include{07}
+\include{08}
+\include{09}
+\include{10}
+\include{11}
+
 %\include{voc}
 
+
+
+\printindex % печать предметного указателя здесь
 \tableofcontents
+
 
 \end{document}
